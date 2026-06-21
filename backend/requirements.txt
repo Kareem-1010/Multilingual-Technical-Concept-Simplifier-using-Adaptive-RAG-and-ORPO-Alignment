@@ -7,6 +7,7 @@ python-multipart
 nltk
 langdetect
 textstat
+spacy
 
 # Transformers & Embeddings (CPU only)
 torch
@@ -24,6 +25,7 @@ rank_bm25
 # Evaluation Metrics
 evaluate
 rouge-score
+sacremoses
 bert-score
 sacrebleu
 scikit-learn
