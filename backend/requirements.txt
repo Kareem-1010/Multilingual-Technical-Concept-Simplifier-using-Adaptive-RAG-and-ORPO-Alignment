@@ -1,0 +1,46 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-multipart
+
+# NLP Core
+nltk
+langdetect
+textstat
+
+# Transformers & Embeddings (CPU only)
+torch
+transformers
+sentence-transformers
+accelerate
+
+# RAG & Vector Store
+faiss-cpu
+langchain
+langchain-community
+langchain-huggingface
+rank_bm25
+
+# Evaluation Metrics
+evaluate
+rouge-score
+bert-score
+sacrebleu
+scikit-learn
+
+# Database
+sqlalchemy
+aiosqlite
+
+# Utilities
+httpx
+python-dotenv
+loguru
+rich
+pytest
+pytest-asyncio
+
+# Auth
+PyJWT
+passlib[bcrypt]
+bcrypt
