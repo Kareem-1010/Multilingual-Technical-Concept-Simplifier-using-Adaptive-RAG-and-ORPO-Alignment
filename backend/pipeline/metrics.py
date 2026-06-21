@@ -8,7 +8,6 @@ class MetricsEvaluator:
     def __init__(self):
         self.bleu = evaluate.load("sacrebleu")
         self.sari = evaluate.load("sari")
-        self.bertscore = evaluate.load("bertscore")
         self.rouge = rouge_scorer.RougeScorer(['rougeL'], use_stemmer=True)
         self.encoder = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2", device='cpu')
 
@@ -42,14 +41,6 @@ class MetricsEvaluator:
                 
                 rouge_scores = self.rouge.score(reference_text, generated_text)
                 metrics["rouge_l"] = rouge_scores['rougeL'].fmeasure
-                
-                bert_scores = self.bertscore.compute(
-                    predictions=[generated_text], 
-                    references=[reference_text], 
-                    lang="en", 
-                    model_type="distilbert-base-uncased"
-                )
-                metrics["bertscore"] = bert_scores["f1"][0]
             except Exception as e:
                 # Log or handle error if evaluation fails
                 pass
